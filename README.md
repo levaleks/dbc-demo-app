@@ -49,3 +49,7 @@ npm run start
 ```
 
 **Environment variables:** `MONGO_URI`, `APP_PORT` (see `config.js`)
+
+## Disclaimer
+
+Code smells ¯\_(ツ)_/¯
