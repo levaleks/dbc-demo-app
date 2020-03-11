@@ -50,6 +50,10 @@ npm run start
 
 **Environment variables:** `MONGO_URI`, `APP_PORT` (see `config.js`)
 
+### Database
+
+Node app expects MongoDB running at `localhost:27017` (default address).
+
 ## Disclaimer
 
 Code smells ¯\_(ツ)_/¯
