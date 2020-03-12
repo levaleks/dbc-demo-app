@@ -26,7 +26,11 @@ Compile files and put them to the `dist` folder
 npm run build
 ```
 
-**Environment variables:** `BACKEND_URL` (see `main.js`)
+**Environment variables:** `BACKEND_URL`, `DEV_SERVER_PORT` (see `main.js` and `vue.config.js`)
+
+#### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Back-end
 
