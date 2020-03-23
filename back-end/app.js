@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const storage = require('./storage');
-const { APP_PORT } = require('./config');
+const { APP_PORT, DB_URI } = require('./config');
 
 const app = express();
 
@@ -57,5 +57,8 @@ app.use((err, req, res, next) => res.status(500).send({ error: err.message }));
  */
 
 app.listen(APP_PORT, () => {
-  console.log(`Server is listening port ${APP_PORT}`);
+  console.log(`
+    Server is listening port: ${APP_PORT},
+    MongoDB URI: ${DB_URI},
+    Node environment: ${process.env.NODE_ENV || 'development'}`);
 });
