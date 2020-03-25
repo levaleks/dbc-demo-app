@@ -4,7 +4,7 @@ import axios from 'axios';
 import App from './App.vue';
 
 Vue.prototype.$http = axios.create({
-  baseURL: process.env.BACKEND_URL ? process.env.BACKEND_URL : 'http://localhost:3002/todos',
+  baseURL: process.env.VUE_APP_BACKEND_URL ? process.env.VUE_APP_BACKEND_URL : 'http://localhost:3002/todos',
 });
 
 Vue.use(BootstrapVue);
