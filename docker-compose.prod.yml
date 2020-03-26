@@ -2,13 +2,13 @@ version: "3.7"
 services:
   front-end:
     build:
-      environment:
-        - VUE_APP_BACKEND_URL=http://localhost:300222/todos
+      args:
+        - VUE_APP_BACKEND_URL=http://localhost:3002/todos
     ports:
       - 3003:80
   back-end:
     build:
-      environment:
+      args:
         - MONGO_URI=mongodb://dbc-data-base:27017/todos
     ports:
       - 3002:3002
