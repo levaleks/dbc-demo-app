@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  front-end:
+    build:
+      args:
+        - VUE_APP_BACKEND_URL=http://localhost:3002/todos
+        - DEV_SERVER_PORT=3003
+      target: base-stage
+    command: npm run serve
+    ports:
+      - 3003:3003
+    volumes:
+      - ./front-end:/usr/src/app
+      - ./front-end/package.json:/usr/src/app/package.json
+      - ./front-end/package-lock.json:/usr/src/app/package-lock.json
+      - /usr/src/app/node_modules
+  back-end:
+    build:
+      args:
+        - NODE_ENV=development
+        - MONGO_URI=mongodb://dbc-data-base:27017/todos
+        - APP_PORT=3002
+      target: base-stage
+    command: npm run dev
+    ports:
+      - 3002:3002
+    volumes:
+      - ./back-end:/usr/src/app
+      - ./back-end/package.json:/usr/src/app/package.json
+      - ./back-end/package-lock.json:/usr/src/app/package-lock.json
+      - /usr/src/app/node_modules
+  data-base:
+    ports:
+      - 27017:27017
+    volumes:
+      - /tmp/dbc-mongo-dev:/data/db
